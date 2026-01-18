@@ -1,28 +1,38 @@
-## Python-Projects
+# 🐍 Python Projects 
 
-This project was started with [supopo-pai-cookiecutter-template](https://github.com/ClementPinard/supop-pai-cookiecuttter-template/tree/main)
+Welcome to my Python project showcase! This repository is a collection of my coding journey, featuring everything from interactive games to utility tools and audio scripts.
 
+---
+
+## 📂 Repository Content
+
+This project is organized into three main categories:
+
+### 🎮 Games
+Classic and custom-built games developed with Python:
+* **Snake**: The legendary arcade game.
+* **Minesweeper**: A logic-based puzzle game.
+* **Connect 4 Ultimate**: An enhanced version of the famous strategy game.
+
+### 🧮 Tools & Calculators
+Practical applications for mathematical operations:
+* **Graphical Calculator**: A clean and efficient interface for everyday calculations.
+
+### 🎵 Music & Audio
+Experimental scripts focused on sound manipulation, music generation, or audio processing.
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repository**:
+   ```bash
+   git clone [https://github.com/Declaira/Python-Projects.git](https://github.com/Declaira/Python-Projects.git)
+   
 ## How to run
 
-⚠️ Chose one of the two method below, and remove the other one.
-
-### How to run with NiceGUI
-
 ```bash
-uv run main_ng
-```
-
-You can also run in development mode, which will reload the interface when it see code
-changes.
-
-```bash
-uv run python MyProjects/main_nicegui.py
-```
-
-### How to run with PySide
-
-```bash
-uv run main_qt
+uv run main
 ```
 
 ## Development
