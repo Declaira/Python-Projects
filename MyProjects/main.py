@@ -3,7 +3,7 @@ import os
 import subprocess
 from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, 
                              QLabel, QFrame)
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtCore import Qt
 
 class ProjectDashboard(QWidget):
@@ -13,8 +13,17 @@ class ProjectDashboard(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Python Projects Hub')
+        self.setWindowIcon(QIcon(r"logo.png"))
         self.setFixedSize(450, 550)
-        self.setStyleSheet("background-color: #1a1a1a;")
+        self.setStyleSheet("""
+            ProjectDashboard {
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                    stop:0 #fff3cd, 
+                    stop:0.33 #ffe5b4, 
+                    stop:0.66 #ffd1d1, 
+                    stop:1 #ffc4e1);
+            }
+        """)
 
         layout = QVBoxLayout()
         layout.setContentsMargins(40, 40, 40, 40)
@@ -23,7 +32,7 @@ class ProjectDashboard(QWidget):
         # Header
         title = QLabel('PYTHON PROJECTS')
         title.setFont(QFont('Segoe UI', 20, QFont.Bold))
-        title.setStyleSheet("color: #00d4ff;")
+        title.setStyleSheet("color: #ff6f00;")
         title.setAlignment(Qt.AlignCenter)
         layout.addWidget(title)
 
@@ -39,7 +48,7 @@ class ProjectDashboard(QWidget):
         
         # Bouton Musique avec ton dégradé spécifique
         music_gradient = "qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #1d2b64, stop:1 #f8cdda)"
-        self.add_project_button(layout, "🎵 MUSIC TOOLS", "Musique", "Music.py", music_gradient)
+        self.add_project_button(layout, "🎵 MUSIC TOOLS", "Musique", "Lecteur_musique.py", music_gradient)
 
         # Footer
         footer = QLabel('Declaira - 2026')

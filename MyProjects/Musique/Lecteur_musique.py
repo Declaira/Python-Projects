@@ -7,8 +7,8 @@ from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QMessageBox,QFrame,
     QPushButton, QFileDialog, QListWidget, QLabel, QSlider, QListWidgetItem, QSpacerItem, QSizePolicy
 )
-from PyQt5.QtCore import Qt, QTimer, QSize,QObject, pyqtSignal
-from PyQt5.QtGui import QPixmap, QFont, QIcon,QPainter, QPainterPath
+from PyQt5.QtCore import Qt, QTimer, QSize, QObject, pyqtSignal
+from PyQt5.QtGui import QPixmap, QFont, QIcon, QPainter, QPainterPath
 from mutagen.mp3 import MP3
 from mutagen.id3 import ID3
 
