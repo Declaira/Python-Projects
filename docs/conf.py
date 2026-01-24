@@ -1,60 +1,24 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
 import os
 import sys
 
+
+# On remonte d'un niveau pour être dans 'MonProjet'
+# On ajoute le chemin de 'MyProject' pour que Sphinx voie 'main.py' et les dossiers
 sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../MyProjects"))
+
+# Ajoute aussi les sous-dossiers pour régler les erreurs d'import entre tes scripts
+sys.path.insert(0, os.path.abspath("../MyProjects/Jeux"))
+sys.path.insert(0, os.path.abspath("../MyProjects/Calculatrice"))
+sys.path.insert(0, os.path.abspath("../MyProjects/Musique"))
 
 # -- Project information -----------------------------------------------------
-project = "Python-Projects"
-author = "Declaira"
-copyright = "2025, Declaira"
-
-# -- Options for HTML output -------------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = "pydata_sphinx_theme"
-html_logo = "_static/logo_supop.jpg"
-
-html_theme_options = {
-    "navbar_align": "left",
-    "logo": {
-        "text": "Python-Projects documentation",
-    },
-    "external_links": [
-        {
-            "url": "https://www.institutoptique.fr/",
-            "name": "SupOptique",
-        }
-    ],
-    "icon_links": [
-        {
-            "name": "GitHub",
-            "url": "https://github.com/Declaira/Python-Projects.git",
-            "icon": "fa-brands fa-github",
-            "type": "fontawesome",
-        },
-    ],
-}
-
+project = "Python Projects"
+author = "Déclaira"
+copyright = "2026, Déclaira" # Mis à jour selon ton main.py
 
 # -- General configuration ---------------------------------------------------
-
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
@@ -69,28 +33,49 @@ extensions = [
     "sphinxarg.ext",
 ]
 
-# Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+language = "fr"
+
+# -- Options for HTML output -------------------------------------------------
+html_theme = "pydata_sphinx_theme"
+
+# On utilise ici le logo de ton application
+html_logo = "_static/logo.png"
+html_favicon = "_static/logo.png"
+
+html_theme_options = {
+    "navbar_align": "left",
+    "logo": {
+        "text": "Python Projects",
+        "image_light": "_static/logo.png",
+        "image_dark": "_static/logo.png",
+    },
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/Declaira/Python-Projects.git",
+            "icon": "fa-brands fa-github",
+        },
+    ],
+    # Couleur d'accentuation pour correspondre à ton orange #ff6f00
+    "surface_prop_styles": {
+        "primary-color": "#ff6f00",
+    },
+}
+
+# Ajout du CSS personnalisé pour les dégradés
+html_static_path = ["_static"]
+html_css_files = [
+    "custom.css",
+]
+
+# -- Extension configurations ------------------------------------------------
 autodoc_typehints = "signature"
 autoclass_content = "both"
-autodoc_typehints_format = "short"
-python_use_unqualified_type_names = True
-nbsphinx_allow_errors = True
-nbsphinx_execute = "auto"
 add_module_names = False
 copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
 copybutton_prompt_is_regexp = True
-# copybutton_exclude = ".linenos, .gp, .go"
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),

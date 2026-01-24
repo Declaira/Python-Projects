@@ -1,0 +1,30 @@
+/* Rappel du dégradé de l'application dans la barre de navigation ou le header */
+:root {
+    --pst-color-primary: #ff6f00; /* L'orange de ton titre */
+    --pst-color-target: #ffc4e1;
+}
+
+/* Application du dégradé léger en haut de page */
+.bd-header {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #fff3cd, 
+        stop:0.33 #ffe5b4, 
+        stop:0.66 #ffd1d1, 
+        stop:1 #ffc4e1) !important;
+    /* Note: CSS standard ne supporte pas la syntaxe Qt, voici l'équivalent standard : */
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe5b4 33%, #ffd1d1 66%, #ffc4e1 100%) !important;
+}
+
+/* Style des titres pour coller à Segoe UI et à l'orange */
+h1, h2, h3 {
+    color: #ff6f00 !important;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+}
+
+/* Style des boutons pour rappeler tes cartes de projets */
+.sd-card {
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
